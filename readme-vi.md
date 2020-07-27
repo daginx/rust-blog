@@ -8,7 +8,7 @@ Những bài đăng của tôi được liệt kê dưới đây theo thứ tự
 |-|-|
 | 2020-07-22 | [Sizedness in Rust](./posts/sizedness-in-rust.md) |
 | 2020-05-19 | [Common Rust Lifetime Misconceptions](./posts/common-rust-lifetime-misconceptions.md) |
-| 2020-05-09 | [Learning Rust in 2020](./posts/learning-rust-in-2020.md) |
+| 2020-05-09 | [Học Rust vào năm 2020](./posts/vi/learning-rust-in-2020.md) |
 | 2020-05-02 | [Tại sao lại viết blog?](./posts/vi/why-blog.md) |
 
 ## Các thông báo

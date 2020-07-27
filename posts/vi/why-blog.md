@@ -32,6 +32,6 @@ Nhận thông báo khi một bài đăng được xuất bản bằng cách
 
 ## Đọc thêm
 
-- [Learning Rust in 2020](./learning-rust-in-2020.md)
+- [Học Rust vào năm 2020](./learning-rust-in-2020.md)
 - [Common Rust Lifetime Misconceptions](./common-rust-lifetime-misconceptions.md)
 - [Sizedness in Rust](./sizedness-in-rust.md)
