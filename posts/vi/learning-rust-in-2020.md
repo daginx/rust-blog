@@ -1,11 +1,11 @@
 # Học Rust vào năm 2020
 
-_Ngày 9 tháng 5, 2020 · 15 phúc đọc · #rust_
+_Ngày 9 tháng 5, 2020 · 15 phút đọc · #rust_
 
 **Mục lục**
 - [Giới thiệu](#giới-thiệu)
 - [TL;DR](#tldr)
-- [Practical Rust Resource Reviews](#practical-rust-resource-reviews)
+- [Review về các tài nguyên luyện tập Rust](#review-về-các-tài-nguyên-luyện-tập-rust)
     - [HackerRank](#hackerrank)
     - [Project Euler](#project-euler)
     - [LeetCode](#leetcode)
@@ -22,9 +22,9 @@ _Ngày 9 tháng 5, 2020 · 15 phúc đọc · #rust_
 
 ## Giới thiệu
 
-When I started learning Rust I made the mistake of following the advice to read [The Book](https://doc.rust-lang.org/book/title-page.html) first. While it's a great resource, it's pretty overwhelming for a beginner to get told _"If you'd like to learn this programming language the best way to start is to read this 20 chapter book!"_ Most people give up before they even get started when they get advice like this. Nobody ever told someone to read a 20 chapter book just to get started with Javascript or Python. Rust's learning curve is no joke but you gotta give the people what they want, and they want to program, not read about programming. Programming is fun and reading about programming is not as fun.
+Khi tôi bắt đầu học Rust, tôi đã mắc phải sai lầm khi làm theo lời khuyên đọc [Cuốn sách này](https://doc.rust-lang.org/book/title-page.html) trước tiên. Mặc dù đó là một tài nguyên tuyệt vời, nó lại hơi quá sức đối với một người mới bắt đầu khi được bảo rằng _"Nếu bạn muốn học ngôn ngữ lập trình này, cách tốt nhất để bắt đầu là hãy đọc 20 chương sách này!"_ Hầu hết mọi người đều bỏ cuộc trước cả khi bắt đầu nếu nghe được những lời khuyên như thế. Không ai lại đi nói rằng cần đọc 20 chương sách chỉ để bắt đầu với Javascript hoặc Python cả. Learning curve của Rust thực sự không phải là chuyện đùa nhưng bạn nên đưa cho mọi người thứ họ muốn, và họ muốn lập trình, không phải đọc về lập trình. Lập trình thì vui vẻ nhưng đọc về lập trình thì không vui đến thế.
 
-The first 10% of this article is gonna be me giving you advice on how to learn Rust in 2020 following a _practical hands-on coding_ approach. This is the good part of the article. You can safely exit after this part (I'll tell you when). The remaining 90% of this article is me ranting about how most online coding challenge sites have poor support for Rust.
+10% đầu tiên của bài này là để tôi đưa ra lời khuyên cho bạn làm thế nào để học Rust vào năm 2020 theo hướng tiếp cận _trăm thấy không bằng một lần thử (practical hands-on coding)_. Đây là một phần hay của bài viết. You can safely exit after this part (Tôi sẽ nói với bạn là khi nào). 90% còn lại của bài viết này là để tôi "ca ngợi" số đông các trang làm về coding challenge hỗ trợ Rust nghèo nàn đến mức nào.
 
 
 
