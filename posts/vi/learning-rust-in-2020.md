@@ -42,33 +42,33 @@ Bỏ đọc ngay, phần hay nhất của bài hết rồi.
 
 ## Review về các tài nguyên luyện tập Rust
 
-_Alternative title: Reviews of Free Online Resources a Rust Beinnger can use to Practice Writing Small Simple Rust Programs_
+_Tiêu đề thay thế: các review về các tài nguyên online miễn phí mà một Rust beginner có thể dùng để luyện tập viết các chương trình Rust nhỏ và đơn giản_
 
-Most of these resources weren't specifically created for the purpose of teaching Rust, however they can all be used to learn and practice Rust and many of them explicitly support Rust submissions and provide Rust-specific versions of problems.
+Hầu hết các tài nguyên này đều không được tạo ra với mục đích dạy Rust, nhưng dù sao chúng vẫn có thể được dùng để học và luyện tập Rust. Rất nhiều trong số chúng hỗ trợ các Rust submission một cách rõ ràng và cung cấp các phiên bản dành riêng cho Rust của các vấn đề đó.
 
-The resources are ordered from worst to best.
+Những tài nguyên này được sắp xếp theo thứ tự từ tệ nhất đến tốt nhất.
 
 
 
 ### [HackerRank](https://www.hackerrank.com)
 
-Rust is a supported language on HackerRank except you aren't allowed to submit Rust solutions to most of the problems on their site. I tried to upload my solution directly and they refused it:
+Rust là một ngôn ngữ được hỗ trợ trên HackerRank ngoài việc bạn không được phép submit các lời giải bằng Rust lên hầu hết các problem ở trên trang của họ. Tôi đã cố để upload lời giải bằng Rust của mình một cách trực tiếp nhưng họ đã từ chối nó:
 
-![hackerrank more like failrank](../assets/hackerrank-more-like-failrank.png)
+![hackerrank more like failrank](../../assets/hackerrank-more-like-failrank.png)
 
-This is really strange because I was able to browse Rust solutions for the problem above submitted by other HackerRank users, so it's possible to submit a Rust solution somehow. I tried Googling this issue and but Google didn't return any useful results. There's no way for me to evalute HackerRank other than to tell you not to waste your time with it like I did.
+Nó thật sự lạ bởi vì tôi có thể thấy các lời giải bằng Rust cho problem trên của các người dùng khác trên HackerRank, vì vậy sẽ là khả thi cho việc submit một lời giải bằng Rust theo một cách nào đó. Tôi đã thử Google vấn đề này nhưng Google không trả về một kết quả có ích nào. Không có cách nào cho tôi để đánh giá HackerRank ngoài việc nói với bạn rằng đừng lãng phí thời gian với nó giống như tôi đã làm.
 
 
 
 ### [Project Euler](https://projecteuler.net/archives)
 
-When I first started to learn programming back in 2012 I commonly heard _"If you wanna get up to speed quickly in a new programming language solve some Project Euler problems with it!"_ which was okay advice at the time since there were not many other alternatives but in my opinion Project Euler has very little to do with programming. Project Euler problems are more math problems than they are programming problems. Their challenge lies almost entirely in the mathematical reasoning required to reach the solution as the programming required is usually trivial. I would not recommend solving Project Euler problems as a way to learn Rust unless you're very mathematically inclined and have some nostalgia for the site.
+Khi tôi bắt đầu học lập trình lần đầu tiên vào năm 2012, tôi thường được nghe _"Nếu bạn muốn tăng tốc nhanh chóng trong việc học một ngôn ngữ mới thì hãy đi giải một vài Project Euler problem bằng nó"_ và đó là một lời khuyên ổn ở thời điểm khi không có quá nhiều lựa chọn thay thế. Nhưng theo quan điểm của tôi thì Project Euler có quá ít thứ để làm với lập trình. Các problem trên Project Euler giống các problem về toán hơn là các problem về lập trình. Gần như toàn bộ challenge của họ yêu cầu người làm phải có lý luận toàn học hơn là kỹ năng lập trình. Tôi không khuyến khích giải quyết các problem trên Project Euler như là một cách để học Rust trừ khi bạn là một người rất thiên về toán và có chút hoài niệm với trang này.
 
 
 
 ### [LeetCode](https://leetcode.com/problemset/all/)
 
-Rust is a supported language on LeetCode. For every problem on LeetCode you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. For more involved problems the solution template might include a `struct` and an `impl` block with several unimplemented methods. Unfortunately, these solution templates are not created by humans, they are automatically generated, which results in a lot of really awkward and unidiomatic Rust code. Examples:
+Rust là một ngôn ngữ được hỗ trợ trên LeetCode. Hầu hết các problem trên LeetCode đều có các template sẵn cho lời giải bao gồm một hàm chưa được cài đặt, nơi mà sau đó bạn sẽ code và submit để giải quyết problem. Trong hầu hết các problem, các template này sẽ bao gôm một `struct` và một block `impl` với một vài hàm chưa được cài đặt. Không may là, các template này không được tạo ra một cách thủ công, chúng được tạo ra một các tự động và hậu quả là có rất nhiều code Rust thực sự khó hiểu và đơn lẻ. Ví dụ:
 
 | LeetCode generated Rust | Idiomatic Rust |
 |-|-|
