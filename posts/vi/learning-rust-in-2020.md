@@ -70,28 +70,28 @@ Khi tôi bắt đầu học lập trình lần đầu tiên vào năm 2012, tôi
 
 Rust là một ngôn ngữ được hỗ trợ trên LeetCode. Hầu hết các problem trên LeetCode đều có các template sẵn cho lời giải bao gồm một hàm chưa được cài đặt, nơi mà sau đó bạn sẽ code và submit để giải quyết problem. Trong hầu hết các problem, các template này sẽ bao gôm một `struct` và một block `impl` với một vài hàm chưa được cài đặt. Không may là, các template này không được tạo ra một cách thủ công, chúng được tạo ra một các tự động và hậu quả là có rất nhiều code Rust thực sự khó hiểu và đơn lẻ. Ví dụ:
 
-| LeetCode generated Rust | Idiomatic Rust |
+| Rust được sinh bởi LeetCode | Rust chuẩn |
 |-|-|
-| tree problems represent links as `Option<Rc<RefCell<Node>>>` | `Option<Rc<RefCell<Node>>>` is overkill for tree links and `Option<Box<Node>>` works just as well and is much easier to work with |
+| các problem về cây biểu diễn node bằng `Option<Rc<RefCell<Node>>>` | `Option<Rc<RefCell<Node>>>` có vẻ hơi bị dao mổ trâu với node và `Option<Box<Node>>` có thể hoạt động tốt như thế mà dễ sử dụng hơn nhiều |
 | methods which obviously mutate self still borrow it immutably, e.g. `fn insert(&self, val: i32)` | methods that mutate self need to borrow it mutably, e.g. `fn insert(&mut self, val: i32)` |
 | signed 32-bit integers are used for all numbers, even if the problem is undefined for nonnegative integers, e.g. `fn nth_fib(n: i32) -> i32` | problems which are undefined for nonnegative integers should use unsigned integers, e.g. `fn nth_fib(n: u32) -> u32` |
 | functions always take ownership of their arguments, even if it's unnecessary, e.g. `fn sum(nums: Vec<i32>) -> i32` | if you don't need ownership then borrow `fn sum(nums: &[i32]) -> i32` |
 | functions sometimes ignore basic error cases, e.g. for `fn get_max(nums: Vec<i32>) -> i32` what `i32` should be returned if `nums` is empty? | if a result might be undefined the return type should be wrapped in an `Option`, e.g. `fn get_max(nums: &[i32]) -> Option<i32>` |
 
-Other LeetCode issues, specific to Rust:
-- LeetCode doesn't allow you to pull in 3rd-party dependencies in solutions. Normally I think this is okay for most languages but Rust in particular has a pretty slim standard library which doesn't even include regex support so a lot of the more complex string parsing problems on LeetCode are pointlessly difficult to solve in Rust but have otherwise trivial solutions in other languages which have regex support in their standard libraries.
-- None of the problems in the `concurrency` category accept solutions in Rust. What? Fearless concurrency is one of Rust's major selling points!
-- After solving a problem you can go to the problem's comments section to see other user's solutions (as many users like to publish their solutions there) but because Rust isn't very popular on LeetCode sometimes you won't find any Rust solutions ;(
+Các vấn đề khác trên LeetCode, dành riêng cho Rust:
+- LeetCode không cho phép bạn dùng thư việc bên thứ 3 để giải quyết vấn đề. Thông thường thì tôi nghĩ là nó ổn đối với hầu hết các ngôn ngữ nhưng riêng Rust thì  lại có thư viện chuẩn tương đối đơn giản, đến nỗi không support cả biểu thức chính quy cho nên có rất nhiều vấn đề khi parse các chuỗi string phức tạp trên LeetCode bằng Rust. Trong khi việc đó chả đáng là gì đối với các ngôn ngữ có hỗ trợ sẵn biểu thức chính quy trong thư viện chuẩn của chúng.
+- Không một problem nào trong mục `concurrency` chập nhận các lời giải bằng Rust. Cái gì? `Fearless concurrency` là một trong những tính năng cực kì đắt giá của Rust!
+- Sau khi giải quyết xong prolem, bạn có thể đến phần comment của problem để xem lời giải của những ngừoi khác (bởi vì rất nhiều người thích để lời giải của họ ở đó) nhưng đen ở chỗ là Rust không được phổ biến lắm trên LeetCode nên thỉnh thoảng sẽ không thấy lời giải bằng Rust nào ;(
 
-General LeetCode issues:
-- LeetCode has a surprising amount of very low quality problems. Problems can be liked and disliked by users but problems are never removed even if they hit very high dislike ratios. I've seen lots of problems with 100+ votes and 80%+ dislike ratios and I don't understand why they are kept on the site.
-- Problem difficulty ratings are kinda off. Problems are rated as Easy, Medium, or Hard but there are many Easy problems with lower solve rates than many Hard problems.
-- Not all problems accept solutions in all languages, and you can't filter problems by which languages they accept. None of the graph problems on LeetCode accept Rust solutions, for example.
-- LeetCode blocks "premium" problems behind a steep monthly paywall but doesn't offer any kind of premium free-trial so there's no telling if the quality is actually any better than the free problems.
+Các vấn đề chung trên LeetCode:
+- LeetCode có một lượng đáng kinh ngạc các problem có chất lượng vô cùng thấp. Các problem được like và dislike bởi người dùng nhưng lại không bao giờ được xoá đi mặc dù chúng có một tỉ lệ dislike rất cao. Tôi từng thấy nhiều problem có hơn 100 vote mà trong đó hơn 80% là dislike. Tôi thắc mắc là tại sao chúng vẫn được giữ ở đó
+- Xếp hạng độ khó của problem hình như có vấn đề. Các problem được xếp  hạng là Dễ, Trung bình, hoặc Khó nhưng có rất nhiều problem Dễ lại có tỉ lệ giải thấp hơn rất nhiều so với các problem Khó.
+- Không phải tất cả các problem đều hỗ trợ tất cả các ngôn ngữ. Và bạn không thể lọc các problem theo ngôn ngữ mà chúng support. Ví dụ là không có một problem nào vễ graph trên LeetCode chấp nhận lời giải Rust cả.
+- LeetCode chặn các problem "premium" sau một bức tường phí hàng tháng siêu to khổng lồ mà lại không cho phép dùng thử. Vì vậy chả có gì đảm bảo là các problem cao cấp này lại tốt hơn các problem miễn phí cả.
 
-Things LeetCode does right:
-- Solutions to problems are tested against a suite of secret unit tests, but if you fail a particular test case they show you the failed case.
-- All of the generated Rust code at least follows rustfmt conventions.
+Các thư mà LeetCode đã làm đúng:
+- Các lời giải được kiểm tra bằng các unit test bí mật, nhưng nếu bạn fail một test case cụ thể nào đó thì họ sẽ chỉ ra cho bạn.
+- Tất cả các code Rust được sinh tự động ít nhất là đã tuân theo các convention của rustfmt.
 
 
 
