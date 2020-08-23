@@ -97,18 +97,18 @@ Các thư mà LeetCode đã làm đúng:
 
 ### [Codewars](https://www.codewars.com/join?language=rust)
 
-Codewars is a misleading name. There's no war going on at Codewars. There's no time limit to solve problems and your solutions aren't judged on their speed of execution or memory useage. You aren't in competition with anyone else. This isn't a bad thing, just worth pointing out.
+Codewars là một cái tên gây hiểu nhầm. Không có cuộc thi nào đang diễn ra ở Codewars cả. Không có giới hạn thời gian để giải quyết vấn đề và các lời giải của bạn cũng không được đánh giá dựa trên thời gian cũng như bộ nhớ đã sử dụng. Bạn không phải ganh đua với những người khác. Đây không phải là một điều tệ, chỉ là đáng để chỉ ra thôi.
 
-Rust is a supported language on Codewars. For every problem on Codewars you get a solution template which usually contains a single unimplemented function which you then have to implement and submit in order to solve the problem. These solution templates are created by humans, including humans who aren't familiar with Rust, so you occasionally get some awkward and unidiomatic Rust. Examples:
+Rust được hỗ trợ trên Codewars. Với mỗi problem trên Codewars, bạn có một template cho lời giải thường bao gồm một hàm chưa được viết, là nơi bạn sẽ cài đặt hàm và sau đó submit lên. Các template này được tạo thủ công bằng sức người, bao gồm cả những người không quen với Rust nữa, vì vậy thỉnh thoảng bạn vẫn sẽ thấy một số code Rust trông có vẻ kỳ cục và không đúng chuẩn lắm. Ví dụ:
 
-| Codewars' Rust Problems | Idiomatic Rust |
+| Các vấn đề về Rust của Codewars | Rust chuẩn |
 |-|-|
 | sometimes don't follow rustfmt conventions, e.g. `fn makeUppercase(s:&str)->String` | always follows rustfmt conventions, e.g. `fn make_uppercase(s: &str) -> String` |
 | sometimes takes signed integer arguments for problems that aren't defined for nonnegative integers, e.g. `fn nth_fib(n: i32) -> i32` | if a problem isn't defined for nonnegative integers use unsigned integer arguments, e.g. `fn nth_fib(n: u32) -> u32` |
 | sometimes a problem asks you to return `-1` for the null case, e.g. `fn get_index(needle: i32, haystack: &[i32]) -> i32` | if a result can be null the return type should be wrapped in an `Option`, e.g. `fn get_index(needle: i32, haystack: &[i32]) -> Option<usize>` |
 | sometimes don't take advantage of deref coercion, e.g. `fn do_stuff(s: &String, list: &Vec<i32>)` | takes advantage of deref coercion, e.g. `fn do_stuff(s: &str, list: &[i32])` |
 
-All of the issues above only happen sometimes since there are Rustaceans of various skill-levels on Codewars translating problems to Rust. This is a huge step up from LeetCode where all of the generated Rust problem code is consistently unidiomatic. However, the Rust community on Codewars as a whole might lean towards the inexperienced side since I've seen some highly upvoted "idiomatic" solutions that were also a bit on the awkward side. Examples:
+Tất cả các vấn đề trên chỉ thỉnh thoảng xảy ra bởi vì có các Rustaceans ở rất nhiều trình độ trên Codewars chuyển các problem của họ sang Rust. Đây là một bước tiến lớn so với LeetCode, nơi tất cả code Rust sinh ra bị không đúng chuẩn và đồng nhất. Mặc dù vậy, cộng đồng Rust trên Codewars có vẻ phần lớn là thiếu kinh nghiệm bởi vì tôi đã từng thấy một vài lời giải có số vote nhiều lại có code hơi kỳ cục chút. Ví dụ:
 
 | Codewars' highest upvoted Rust solutions | Idiomatic Rust |
 |-|-|
@@ -117,15 +117,15 @@ All of the issues above only happen sometimes since there are Rustaceans of vari
 | sometimes make unnecessary allocations, e.g. `str_slice.to_string().chars()` | if you don't need to allocate then don't, e.g. `str_slice.chars()` |
 | often try to solve the problem using nothing but iterators at the cost of everything else | iterators are expressive and idiomatic, but if you have to chain 15 of them in a row and there are multiple levels of nested iterators in-between then perhaps you should consider refactoring to use some helper functions, intermediate variables, and maybe even a for-loop |
 
-Again, the issues above only happen sometimes. An experienced Rustacean can spot them easily but there are a lot of Rust newbies on these sites who have no clue they are learning anti-patterns.
+Một lần nữa, các vấn đề trên chỉ thỉnh thoảng xảy ra. Một Rustacean có kinh nghiệm có thể dễ dàng phát hiện ra nhưng có rất nhiều Rust newbie trên những trang này không thể nhận ra rằng họ đang học các anti-pattern.
 
-Other Codewars issues, specific to Rust:
-- Rust doesn't seem that popular on Codewars, the site has 9000 exercises but only 300 of them have been translated to Rust ;(
+Các vấn đề khác của Codewars, cụ thể là với Rust:
+- Rust có vẻ không được phổ biến lắm trên Codewars, trang này có 9000 bài tập nhưng chỉ có 300 trong số đó là được chuyển sang Rust ;(
 
-Other general Codewars issues:
-- Your solution is tested against a suite of secret unit tests, if you fail one of the secret unit tests you aren't shown the failed test case. This is especially annoying if the test case tests for an edge case that wasn't clearly communicated in the problem description.
+Các vấn đề chung khác của Codewars:
+- Lời giải của bạn được kiểm tra bằng các unit test bí mật, nếu bạn fail ở một test case thì nó sẽ không được chỉ ra cho bạn. Nó thật sự khó chịu nếu test case này kiểm tra một trường hợp ở biên, mà trường hợp này không được giải thích rõ trong mô tả của problem.
 
-Things Codewars does right:
+Các thứ Codewars làm đúng:
 - There's a small whitelist of 3rd-party dependencies you can use to help solve problems with Rust. This whitelist includes: rand, chrono, regex, serde, itertools, and lazy_static which helps round out Rust's standard library and puts it more on par with other languages.
 - You can filter problems by language.
 - Submitting a solution to a problem also automatically publishes the solution. You can view and upvote other members' solutions. You can sort solutions by most upvotes to see particularly concise and clever solutions, which sometimes will also be very idiomatic (but sometimes not, as explained above).
